@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-rgb: 237 245 255;
+  --green-rgb: 125 161 35;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body:has(.card[data-color="blue"]:hover) {
+  background-color: rgb(var(--blue-rgb) / 25%);
+}
+
+body:has(.card[data-color="green"]:hover) {
+  background-color: rgb(var(--green-rgb) / 25%);
+}
+
+@layer utilities {
+  .max-container {
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+  }
+
+  .head-text {
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-playfair tracking-wider;
+  }
+
+  .subhead-text {
+    @apply font-semibold sm:text-3xl text-xl relative font-jakarta tracking-wide;
+  }
+
+  .blue-gradient_text {
+    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-grotesk;
+  }
+
+  .input {
+    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-jakarta shadow-card;
+  }
+
+  .textarea {
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-jakarta shadow-card;
+  }
+
+  .btn {
+    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-grotesk font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center tracking-wide;
+  }
+
+  .header {
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0 font-jakarta;
+  }
+
+  .footer {
+    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7 font-jakarta;
+  }
+
+  .footer-container {
+    @apply flex flex-wrap gap-7 items-center justify-between;
+  }
+
+  .info-box {
+    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8 font-jakarta;
+  }
+
+  .neo-btn {
+    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-grotesk font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3 tracking-wide;
+  }
+
+  .cta {
+    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+  }
+
+  .cta-text {
+    @apply text-black-500 font-playfair font-extrabold flex-1 text-3xl max-md:text-center tracking-wide;
+  }
+}
+
+.glassmorphism {
+  background: rgba(8, 116, 239, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.logo {
+  border-radius: 8.889px;
+  background: #fff;
+  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15),
+    0px 1.5px 4px -1px rgba(67, 83, 255, 0.2);
+}
+
+.block-container {
+  position: relative;
+  transition: 250ms;
+  perspective: 500px;
+}
+
+.block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(15deg);
+  will-change: transform;
+  box-shadow: 16px 0 40px #e4e4e4;
+}
+
+.block-container .btn-back-red {
+  background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
+}
+
+.block-container .btn-back-green {
+  background: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
+}
+
+.block-container .btn-back-yellow {
+  background: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
+}
+
+.block-container .btn-back-blue {
+  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+}
+
+.block-container .btn-back-orange {
+  background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
+}
+
+.block-container .btn-back-pink {
+  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
+}
+
+.block-container .btn-back-black {
+  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
+}
+
+.block-container .btn-front {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  background-color: #ffffff33;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.block-container:hover > .btn-back {
+  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+}
+
+.block-container:hover > .btn-front {
+  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+
+/* Neo Brutalism */
+.neo-brutalism-blue {
+  background: #2b77e7;
+  position: relative;
+  border-radius: 10px;
+  border: #2b77e7;
+  box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
+    0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
+}
+
+.neo-brutalism-white {
+  background: #fff;
+  border: #fff;
+  box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
+    0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+}
+
+/* Add dark mode styles for general text */
+.dark {
+  color-scheme: dark;
+}
+
+.dark .info-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.dark .neo-brutalism-blue {
+  background: #2b77e7;
+}
+
+.dark .neo-brutalism-white {
+  background: #e2e8f0;
+}
+
+/* Add styles for better text contrast in dark mode */
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark h4, 
+.dark h5, 
+.dark h6 {
+  color: #fff;
+}
+
+.dark p {
+  color: #e2e8f0;
+}
+
+/* Adjust link colors in dark mode */
+.dark a:not(.btn):not(.neo-btn) {
+  color: #60a5fa;
+}
+
+.dark a:not(.btn):not(.neo-btn):hover {
+  color: #93c5fd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+}
+
+/* Add to your existing styles */
+.profile-glow {
+  position: relative;
+}
+
+.profile-glow::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(43, 119, 231, 0.3), 
+    transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.dark .profile-glow::before {
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(96, 165, 250, 0.3), 
+    transparent 70%);
+}
+
+/* Add to your existing styles */
+@keyframes gradient-shift {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gradient-animate {
+  animation: gradient-shift 8s linear infinite;
+}
+
+/* Optional: Add this if you want a more subtle animation on hover */
+.group:hover .gradient-animate {
+  animation-duration: 4s;
+}
+
+/* Add to your existing styles */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glass effect styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Custom scrollbar for experience cards */
+.experience-card::-webkit-scrollbar {
+  width: 4px;
+}
+
+.experience-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.experience-card::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+}
+
+.experience-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+.btn-back-red {
+  @apply bg-gradient-to-r from-red-500 to-red-600;
+}
+
+.btn-back-green {
+  @apply bg-gradient-to-r from-green-500 to-green-600;
+}
+
+.btn-back-blue {
+  @apply bg-gradient-to-r from-blue-500 to-blue-600;
+}
+
+.btn-back-pink {
+  @apply bg-gradient-to-r from-pink-500 to-purple-500;
+}
+
+/* Project Journey Styles */
+.journey-timeline {
+  @apply mt-16 relative flex flex-col gap-12;
+}
+
+.journey-card {
+  @apply flex gap-8 relative;
+}
+
+.timeline-connector {
+  @apply flex flex-col items-center w-8;
+}
+
+.timeline-connector .dot {
+  @apply w-8 h-8 rounded-full bg-blue-500 shadow-lg z-10;
+}
+
+.timeline-connector .line {
+  @apply w-1 grow bg-blue-300 mx-auto -mt-2;
+}
+
+.journey-card:last-child .timeline-connector .line {
+  @apply hidden;
+}
+
+.project-content {
+  @apply flex-1 bg-white dark:bg-gray-800 rounded-xl p-8 shadow-xl 
+         transform transition-all duration-300 hover:-translate-y-2
+         border border-blue-100 dark:border-blue-900;
+}
+
+.project-header {
+  @apply flex justify-between items-start mb-4;
+}
+
+.project-title {
+  @apply text-2xl font-bold text-blue-600 dark:text-blue-400;
+}
+
+.project-date {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.project-description {
+  @apply text-lg text-gray-700 dark:text-gray-300 mb-4 font-medium;
+}
+
+.project-points {
+  @apply space-y-2 mb-6;
+}
+
+.point-item {
+  @apply flex gap-2 text-gray-600 dark:text-gray-400 text-sm;
+}
+
+.point-bullet {
+  @apply text-blue-500 font-bold;
+}
+
+.project-footer {
+  @apply flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700;
+}
+
+.tech-stack {
+  @apply text-sm text-gray-500 dark:text-gray-400 font-mono;
+}
+
+.view-project {
+  @apply flex items-center gap-2 text-blue-500 hover:text-blue-600 font-semibold transition-colors;
+}
+
+.view-project img {
+  @apply w-4 h-4 transition-transform group-hover:translate-x-1;
+}
+
+/* Add hover effects */
+.journey-card:hover .timeline-connector .dot {
+  @apply ring-4 ring-blue-200 dark:ring-blue-800 transition-all duration-300;
+}
+
+.project-content:hover {
+  @apply shadow-2xl;
+}
+
+.project-image img {
+  @apply transition-all duration-300;
+}
+
+.project-content:hover .project-image img {
+  @apply transform scale-[1.02] shadow-xl;
+}
+
+.project-btn {
+  @apply flex items-center justify-center gap-2 px-4 py-2 
+         rounded-lg text-white font-semibold text-sm
+         transition-all duration-300 transform hover:scale-105
+         hover:shadow-lg;
+}
+
+.project-btn img {
+  @apply transition-transform duration-300;
+}
+
+.project-btn:hover img {
+  @apply translate-x-1;
+}
+
+/* Project Journey Dark Mode Styles */
+.dark .project-content {
+  @apply bg-gray-800/90 border-gray-700 
+         shadow-[0_0_20px_rgba(59,130,246,0.15)];
+}
+
+.dark .project-title {
+  @apply text-blue-300 font-bold;
+}
+
+.dark .project-date {
+  @apply text-blue-200/80;
+}
+
+.dark .project-description {
+  @apply text-gray-200;
+}
+
+.dark .point-item {
+  @apply text-gray-300;
+}
+
+.dark .point-bullet {
+  @apply text-blue-300;
+}
+
+.dark .tech-stack {
+  @apply text-blue-200/90 border-gray-600;
+}
+
+.dark .timeline-connector .dot {
+  @apply bg-blue-400;
+}
+
+.dark .timeline-connector .line {
+  @apply bg-blue-400/30;
+}
+
+/* Project Buttons Dark Mode */
+.dark .project-btn.bg-blue-500 {
+  background-color: rgb(59 130 246);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  font-weight: 500;
+  color: white;
+}
+
+.dark .project-btn.bg-blue-500:hover {
+  background-color: rgb(37 99 235);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.dark .project-btn.bg-gray-800 {
+  background-color: rgb(75 85 99);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(156, 163, 175, 0.3);
+  font-weight: 500;
+  color: white;
+}
+
+.dark .project-btn.bg-gray-800:hover {
+  background-color: rgb(55 65 81);
+  box-shadow: 0 0 20px rgba(156, 163, 175, 0.4);
+}
+
+/* Card Hover Effects in Dark Mode */
+.dark .project-content:hover {
+  @apply shadow-[0_0_30px_rgba(59,130,246,0.2)]
+         border-blue-800/50 bg-gray-800/95;
+}
+
+.dark .journey-card:hover .timeline-connector .dot {
+  @apply ring-blue-500/30;
+}
+
+/* Image Container Dark Mode */
+.dark .project-content img {
+  @apply shadow-[0_0_20px_rgba(59,130,246,0.15)]
+         brightness-90;
+}
+
+.dark .project-content:hover img {
+  @apply shadow-[0_0_25px_rgba(59,130,246,0.25)]
+         brightness-100;
+}
+
+/* Improve CTA section visibility in dark mode */
+.dark .cta-text {
+  @apply text-gray-200;
+}
+
+.dark hr {
+  @apply border-gray-700;
+}
