@@ -10,6 +10,15 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
+      <div className="absolute bottom-16 left-2 z-10 px-4 py-2 bg-white/80 dark:bg-gray-800/80 
+                    rounded-lg shadow-lg backdrop-blur-sm">
+        <p className="text-xs text-gray-700 dark:text-gray-300 font-mono">
+          [tap + long tap + left swipe] <br />
+          ↓ Try with Sound
+        </p>
+        
+      </div>
+
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>

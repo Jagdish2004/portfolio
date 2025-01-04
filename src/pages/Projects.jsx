@@ -14,10 +14,10 @@ const projects = [
     date: "Jan 2025",
     description: "Personal Portfolio Web Application",
     points: [
-        "Developed a responsive and interactive personal portfolio website",
-        "Showcased projects using 3D GLB models for enhanced visual appeal",
-        "Implemented seamless navigation and user-friendly UI",
-        "Impl email functionality"
+      "Developed a responsive and interactive personal portfolio website",
+      "Showcased projects using 3D GLB models for enhanced visual appeal",
+      "Implemented seamless navigation and user-friendly UI",
+      "Impl email functionality"
     ],
     tech: "React • Three.js • Tailwind CSS • Framer Motion • 3D Models",
     githubLink: "https://github.com/Jagdish2004/portfolio",
@@ -42,7 +42,6 @@ const projects = [
     githubLink: "https://github.com/Jagdish2004/NaamSiddhi",
     liveLink: "https://naam-siddhi1.vercel.app/"
   },
-  
   {
     iconUrl: tripsy,
     theme: 'btn-back-orange',
@@ -77,73 +76,72 @@ const projects = [
   }
 ];
 
-const ProjectCard = ({ project, index }) => (
-  <div className="journey-card">
-    <div className="timeline-connector">
-      <div className="dot"></div>
-      <div className="line"></div>
-    </div>
-
-    <div className="project-content">
-      <div className="flex gap-6">
-        {/* Left side: Content */}
-        <div className="flex-1">
-          <div className="project-header">
-            <h3 className="project-title font-grotesk">{project.name}</h3>
-            <span className="project-date font-mono">{project.date}</span>
-          </div>
-
-          <p className="project-description font-jakarta">{project.description}</p>
-
-          <ul className="project-points">
-            {project.points.map((point, idx) => (
-              <li key={idx} className="point-item">
-                <span className="point-bullet">•</span>
-                {point}
-              </li>
-            ))}
-          </ul>
-
-          <div className="project-footer">
-            <p className="tech-stack font-mono">{project.tech}</p>
-          </div>
+const ProjectCard = ({ project }) => {
+  return (
+    <div className="journey-card flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+      {/* Left side: Content - Full width on mobile, 2/3 width on desktop */}
+      <div className="w-full md:w-2/3 p-6">
+        <div className="project-header mb-4">
+          <h3 className="project-title font-grotesk text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+            {project.name}
+          </h3>
+          <span className="project-date font-mono text-sm text-gray-600 dark:text-gray-400">
+            {project.date}
+          </span>
         </div>
 
-        {/* Right side: Image and Buttons */}
-        <div className="flex flex-col gap-4 items-center w-[200px] flex-shrink-0">
-          <div className="w-full h-[150px] overflow-hidden rounded-lg">
-            <img 
-              src={project.iconUrl} 
-              alt={project.name}
-              className="w-full h-full object-cover transform transition-all duration-500 hover:scale-110"
-            />
-          </div>
-          
-          <div className="flex flex-col gap-3 w-full">
-            <Link 
-              to={project.liveLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="project-btn bg-blue-500 hover:bg-blue-600"
-            >
-              Live Demo
-              <img src={arrow} alt="arrow" className="w-4 h-4" />
-            </Link>
-            <Link 
-              to={project.githubLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="project-btn bg-gray-800 hover:bg-gray-700"
-            >
-              View Code
-              <img src={arrow} alt="arrow" className="w-4 h-4" />
-            </Link>
-          </div>
+        <p className="project-description font-jakarta text-gray-600 dark:text-gray-300 mb-4">
+          {project.description}
+        </p>
+
+        <ul className="project-points space-y-2 mb-4">
+          {project.points.map((point, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+              <span className="text-blue-500">•</span>
+              {point}
+            </li>
+          ))}
+        </ul>
+
+        <p className="tech-stack font-mono text-sm text-gray-600 dark:text-gray-400">
+          {project.tech}
+        </p>
+      </div>
+
+      {/* Right side: Image and Buttons - Full width on mobile, 1/3 width on desktop */}
+      <div className="w-full md:w-1/3 p-6 flex flex-col justify-between bg-gray-50 dark:bg-gray-800/50">
+        <div className="w-full h-48 md:h-40 mb-4 overflow-hidden rounded-lg">
+          <img 
+            src={project.iconUrl} 
+            alt={project.name}
+            className="w-full h-full object-cover transform transition-all duration-500 hover:scale-110"
+          />
+        </div>
+        
+        <div className="flex flex-col gap-3">
+          <Link 
+            to={project.liveLink} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Live Demo
+            <img src={arrow} alt="arrow" className="w-4 h-4" />
+          </Link>
+          <Link 
+            to={project.githubLink} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            View Code
+            <img src={arrow} alt="arrow" className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Projects = () => {
   return (
@@ -157,7 +155,7 @@ const Projects = () => {
         showcasing growth and mastery over different technologies and concepts.
       </p>
 
-      <div className="journey-timeline">
+      <div className="mt-12 flex flex-col gap-8">
         {projects.map((project, index) => (
           <ProjectCard key={project.name} project={project} index={index} />
         ))}
