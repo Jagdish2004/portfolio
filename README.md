@@ -1,8 +1,19 @@
-# React + Vite
+# **My Portfolio**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio! This is a modern, interactive 3D web experience. Built using cutting-edge technologies, it combines the power of Three.js, React, and Tailwind CSS to deliver an engaging and visually striking user experience.
+---
 
-Currently, two official plugins are available:
+## 🌟 **Demo**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live version of my portfolio here: **[Your Portfolio Link](https://portfolio-zeta-brown-60.vercel.app/)**
+
+---
+
+## 🚀 **Features**
+
+- **3D Visuals**: Stunning 3D models and animations powered by Three.js and GLTF/GLB models.
+- **Responsive Design**: Optimized for all screen sizes using Tailwind CSS.
+- **Fast & Interactive**: Smooth animations and user interactions for an immersive experience.
+- **Modular Architecture**: Built with React components for clean and maintainable code.
+- **Modern UI**: Styled with Tailwind CSS for a sleek, professional appearance.
+
