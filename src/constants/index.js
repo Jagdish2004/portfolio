@@ -192,7 +192,7 @@ export const socialLinks = [
     {
         name: 'CodeChef',
         iconUrl: codechef,
-        link: 'https://www.codechef.com/users/jaggu2004',
+        link: 'https://www.codechef.com/users/jagdish2004',
     },
     {
         name: 'LeetCode',

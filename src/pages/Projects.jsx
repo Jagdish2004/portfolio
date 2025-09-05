@@ -1,79 +1,65 @@
 import { Link } from "react-router-dom";
 import { CTA } from "../components";
 import { arrow } from "../assets/icons";
-import tripsy from "../assets/images/tripsy.png";
+// import tripsy from "../assets/images/tripsy.png";
+// import projectsImage from "../assets/images/projects.png";
+// import portfolioImage from "../assets/images/portfolioImage.png";
 import naamsiddhi from "../assets/images/naamsiddhi.png";
-import projectsImage from "../assets/images/projects.png";
-import portfolioImage from "../assets/images/portfolioImage.png";
+import aifitpro from "../assets/images/aifitpro.png";
+import aiagent from "../assets/images/aiagent.png";
+
 
 const projects = [
   {
-    iconUrl: portfolioImage,
-    theme: 'btn-back-blue',
-    name: "Portfolio",
-    date: "Jan 2025",
-    description: "Personal Portfolio Web Application",
-    points: [
-      "Developed a responsive and interactive personal portfolio website",
-      "Showcased projects using 3D GLB models for enhanced visual appeal",
-      "Implemented seamless navigation and user-friendly UI",
-      "Impl email functionality"
-    ],
-    tech: "React • Three.js • Tailwind CSS • Framer Motion • 3D Models",
-    githubLink: "https://github.com/Jagdish2004/portfolio",
-    liveLink: "#"
-  },
+  iconUrl: aiagent,
+  theme: 'btn-back-blue',
+  name: "AI Agent",
+  date: "Aug 2025",
+  description: "AI Agent to automate database operations and send mails using natural language.",
+  points: [
+    "Developed an AI Agent using N8N and integrated it with a full-stack web application.",
+   "Agent can execute any query on the database, with certain operations intentionally restricted to prevent SQL injection",
+   "Built an automation pipeline in N8N: fetch table → build schema → generate query from user input → execute query → maintain logs.",
+    "Integrated email functionality via Google SMTP server for automated mail delivery.",
+    "Integrated N8N with the full-stack project to maintain logs, chats, and sessions, ensuring proper database relationships."
+  ],
+  tech: "React • Node.js • PostgreSQL • N8N • Gemini API • Ollama OSS 20B • Ngrok • Docker • Webhooks",
+  githubLink: "https://github.com/Jagdish2004/Analyst-n8n-backend", 
+  liveLink: "https://www.linkedin.com/posts/jagdish2004_ai-automation-database-activity-7367884548497502208-r6nX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-K8j4BqZkOJdjqptf5y6jKutScDrDIYkY"
+},
   {
-    iconUrl: naamsiddhi,
-    theme: 'btn-back-blue',
-    name: "Naamsiddhi",
-    date: "Nov 2024 - Dec 2024",
-    description: "Fuzzy Name Conversion of Hindi Names",
-    points: [
-      "Developed a robust solution for fuzzy and phonetic matching of Hindi names",
-      "Utilized Modified Indic Soundex and Levenshtein Distance Algorithm",
-      "Implemented RESTful APIs with CRUD operations",
-      "Integrated database suggestions via API calls",
-      "Provided bilingual support for English and Hindi",
-      "voice to bilingualtext functionality",
-      "Implemented indexing for faster and efficient record searching"
-    ],
-    tech: " MVC architecture • Node.js • Cloudinary • Express • EJS • Axios API • Mongo Atlas • Tailwind CSS • Vercel",
-    githubLink: "https://github.com/Jagdish2004/NaamSiddhi",
-    liveLink: "https://naam-siddhi1.vercel.app/"
-  },
-  {
-    iconUrl: tripsy,
-    theme: 'btn-back-orange',
-    name: "Tripsy",
-    date: "Jul 2024 - Sep 2024",
-    description: "Accommodation Finder Web Application",
-    points: [
-      "Built a dynamic web app for finding accommodations",
-      "Implemented complete CRUD functionality",
-      "Cookie based session management and error handling",
-      "Integrated Authentication and Authorization systems"
-    ],
-    tech: "Express • Cloudinary • EJS • Node.js • Bootstrap • Passport Authentication & Authorization",
-    githubLink: "https://github.com/Jagdish2004/tripsy",
-    liveLink: "https://tripsy1-peach.vercel.app/Tripsy"
-  },
-  {
-    iconUrl: projectsImage,
-    theme: 'btn-back-green',
-    name: "MultiMaze & More",
-    date: "2023 - 2024",
-    description: "Collection of Interactive Web Projects",
-    points: [
-      "MultiMaze: Competitive multiplayer maze game",
-      "StonepaperScissor: Interactive game implementation",
-      "Spotify Clone: Music player with playlist management",
-      "Amazon Clone: E-commerce platform frontend"
-    ],
-    tech: "JavaScript • HTML • CSS",
-    githubLink: "https://github.com/Jagdish2004/",
-    liveLink: "https://multi-maze-game-git-main-jagdish2004s-projects.vercel.app/"
-  }
+  iconUrl: aifitpro,
+  theme: 'btn-back-orange',
+  name: "AIFitPro",
+  date: "July 2025",
+  description: "Fitness tracking web application with AI-generated personalized suggestions.",
+  points: [
+    "Developed using Java Spring Boot microservices architecture to ensure scalability.",
+    "Implemented secure communication between microservices with an authenticated gateway using stateless Keycloak auth (PKCE flow).",
+    "Integrated asynchronous AI suggestion generation via RabbitMQ messaging queues.",
+    "Achieved seamless integration of frontend and backend, making the application deployment-ready."
+  ],
+  tech: "React • Java Spring Boot • PostgreSQL • MongoDB • Keycloak Auth (PKCE) • RabbitMQ • Microservices • Async Processing • Gemini API • Docker",
+  githubLink: "https://github.com/Jagdish2004/AIFitPro",
+  liveLink: "https://www.linkedin.com/posts/jagdish2004_ai-microservices-architecture-activity-7362788864089845760-0J1n?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-K8j4BqZkOJdjqptf5y6jKutScDrDIYkY"
+}
+,
+{
+  iconUrl: naamsiddhi,
+  theme: 'btn-back-blue',
+  name: "Naamsiddhi",
+  date: "Nov 2024 - Dec 2024",
+  description: "Prototype developed for MP Police during Smart India Hackathon 2024.",
+  points: [
+    "Developed a research-oriented MVC prototype for fuzzy and phonetic Hindi name matching, addressing transliteration, spelling variations, and phonetic similarities.",
+    "Designed a hybrid string-matching flow combining phonetic algorithms (Modified Indic Soundex) with fuzzy matching (Levenshtein) and external field based scoring, achieving over 98% (accuracy measured on sample data by mp police) accuracy in searches.",
+    "Reduced query time from minutes to milliseconds by integrating B-tree indexing with phonetic code matching for optimized database lookups.",
+    "Built full CRUD operations, managed many-to-many relationships in MongoDB documents, and integrated bilingual (English/Hindi) support with voice-to-text functionality for enhanced accessibility."
+  ],
+  tech: "Node.js • Express • MongoDB Atlas • MVC Architecture • EJS • Tailwind CSS • Cloudinary • Axios • Vercel • Custom Algorithms",
+  githubLink: "https://github.com/Jagdish2004/NaamSiddhi",
+  liveLink: "https://naam-siddhi1.vercel.app/"
+},
 ];
 
 const ProjectCard = ({ project }) => {
@@ -125,7 +111,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Live Demo
+            Demo
             <img src={arrow} alt="arrow" className="w-4 h-4" />
           </Link>
           <Link 
