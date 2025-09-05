@@ -29,7 +29,7 @@ import {
     nginx,
     postgresql,
     redis,
-    restApi,
+    restapi,
     springboot,
 
 
@@ -78,7 +78,7 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: restApi,
+        imageUrl: restapi,
         name: "REST API",
         type: "Backend",
     },
