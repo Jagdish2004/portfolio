@@ -10,7 +10,7 @@ const HomeInfo = ({ currentStage }) => {
         <span className='font-semibold mx-2 text-white'>Jagdish Raut</span>
         👋
         <br />
-        <span className="font-jakarta">A Full Stack Developer & ML Engineer</span>
+        <span className="font-jakarta">A Full Stack Developer</span>
       </h1>
     );
 
@@ -18,7 +18,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center dark:text-white font-jakarta tracking-wide'>
-          Specialized in Full Stack Development <br /> and Machine Learning Engineering
+          Specialized in Full Stack Development <br /> and building the scalabe systems.
         </p>
 
         <Link to='/about' className='neo-brutalism-white neo-btn dark:text-gray-800 font-grotesk'>
@@ -48,7 +48,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center dark:text-white'>
-          Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
+          Need a project done or looking for a dev? <br/> Let's get in touch!
         </p>
 
         <Link to='/contact' className='neo-brutalism-white neo-btn dark:text-gray-800'>

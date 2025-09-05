@@ -1,4 +1,4 @@
-import { cpmc, tesla } from "../assets/images";
+import { cpmc, dypcoe} from "../assets/images";
 import {
     css,
     express,
@@ -14,14 +14,26 @@ import {
     ml,
     linkedin,
     contact,
-    mui,
-    motion,
     codechef,
     leetcode,
     instagram,
     java,
     c,
     cpp,
+    aws,
+    docker,
+    kafka,
+    kubernetes,
+    postman,
+    n8n,
+    nginx,
+    postgresql,
+    redis,
+    restApi,
+    springboot,
+
+
+
 } from "../assets/icons";
 
 export const skills = [
@@ -36,14 +48,9 @@ export const skills = [
         type: "Language",
     },
     {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
-    },
-    {
-        imageUrl: css,
-        name: "CSS",
-        type: "Frontend",
+        imageUrl: java,
+        name: "Java",
+        type: "Language",
     },
     {
         imageUrl: javascript,
@@ -51,9 +58,29 @@ export const skills = [
         type: "Frontend",
     },
     {
+        imageUrl: python,
+        name: "Python",
+        type: "Language",
+    },
+    {
+        imageUrl: ml,
+        name: "Machine Learning",
+        type: "AI/ML",
+    },
+    {
+        imageUrl: html,
+        name: "HTML",
+        type: "Frontend",
+    },
+    {
         imageUrl: react,
         name: "React",
         type: "Frontend",
+    },
+    {
+        imageUrl: restApi,
+        name: "REST API",
+        type: "Backend",
     },
     {
         imageUrl: nodejs,
@@ -63,6 +90,10 @@ export const skills = [
     {
         imageUrl: express,
         name: "Express",
+        type: "Backend",
+    },
+    { imageUrl: springboot,
+        name: "Spring Boot",
         type: "Backend",
     },
     {
@@ -75,31 +106,40 @@ export const skills = [
         name: "MySQL",
         type: "Database",
     },
-     {
-        imageUrl: java,
-        name: "Java",
-        type: "Language",
+    {
+        imageUrl: postgresql,
+        name: "PostgreSQL",
+        type: "Database",
     },
     {
-        imageUrl: python,
-        name: "Python",
-        type: "Language",
+        imageUrl: redis,
+        name: "Redis",
+        type: "Database",
+    },
+     { imageUrl: docker,
+        name: "Docker",
+        type: "DevOps",
+    },
+    { imageUrl: kubernetes,
+        name: "Kubernetes",
+        type: "DevOps",
+    },
+    { imageUrl: kafka,
+        name: "Kafka",
+        type: "DevOps", 
+    },
+    { imageUrl: aws,
+        name: "AWS",
+        type: "Cloud",
+    },
+    {   imageUrl: nginx,
+        name: "Nginx",
+        type: "DevOps",
     },
     {
-        imageUrl: ml,
-        name: "Machine Learning",
-        type: "AI/ML",
-    },
-      
-    {
-        imageUrl: mui,
-        name: "Material UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: motion,
-        name: "Framer Motion",
-        type: "Frontend",
+        imageUrl: postman,
+        name: "Postman",
+        type: "API Testing",
     },
     {
         imageUrl: git,
@@ -111,36 +151,41 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
+    {
+        imageUrl: n8n,
+        name: "n8n",
+        type: "Workflow Automation",
+    },
    
     
 ];
 
 export const experiences = [
     {
+        title: "Final Year IT Student",
+        company_name: "Dr. D.Y. Patil College of Engineering, Pune",
+        icon: dypcoe,
+        iconBg: "#accbe1",
+        date: "Nov 2022 - Jun 2026(Expected)",
+        points: [
+            "Pursuing Bachelor of Engineering in Information Technology with 8.8 CGPA",
+            "Completed Strong foundation in CS Fundamentals like DSA, OOPs, DBMS, OS, CN, ML, etc.",
+            "Annual Award for Academic Excellence in 2024-25 for securing maximum Achievement",
+        ],
+    },
+    {
         title: "Competitive Programming Mentor",
         company_name: "CPMC - DYPCOE Pune",
         icon: cpmc,
         iconBg: "#accbe1",
-        date: "Sep 2023 - Present",
+        date: "Sep 2024 - Sep 2025",
         points: [
-            "Mentored 50+ students in solving complex programming problems using algorithms and data structures",
+            "Designed and evaluated Contests on hackerrank",
             "Organized and conducted coding competitions and workshops to enhance problem-solving skills",
-            "Created comprehensive learning materials and practice problems for data structures and algorithms",
             "Hosted multiple events to promote competitive programming culture in the institution"
         ],
     },
-    {
-        title: "AI/ML Virtual Intern",
-        company_name: "EduSkill",
-        icon: tesla,
-        iconBg: "#b7e4c7",
-        date: "Oct 2024 - Dec 2024",
-        points: [
-            "Completed a 10-week internship focused on building and deploying machine learning models",
-            "Developed predictive models for real-world datasets using Python and TensorFlow",
-            "Learned various machine learning algorithms and deep learning architectures",
-        ],
-    }
+    
 ];
 
 export const socialLinks = [
@@ -162,7 +207,7 @@ export const socialLinks = [
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/jagdish-raut-bba036259/',
+        link: 'https://www.linkedin.com/in/jagdish2004/',
     },
     {
         name: 'GitHub',
@@ -176,11 +221,4 @@ export const socialLinks = [
     }
 ];
 
-export const achievements = [
-    {
-        title: "Smart India Hackathon Winner 2024 🏆",
-        icon: "🥇",
-        description: "Led a team to victory in Smart India Hackathon 2024 Software Edition at LNCT Bhopal, developing an innovative solution that secured first place among nationwide participants.",
-    },
-    // ... other achievements
-];
+

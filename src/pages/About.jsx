@@ -65,19 +65,25 @@ const ExperienceCard = ({ experience, index }) => {
 const achievements = [
     {
         title: "Smart India Hackathon Winner 2024",
-        description: "National level achievement in India's biggest hackathon.Developed a fuzzy name conversion software, 'Naamsiddhi', for the MP Police Department during SIH 2024, enhancing leadership, teamwork, and problem-solving skills.",
+        description: "National level achievement in India's biggest hackathon.Developed a fuzzy name conversion Algorithm and scalable Prototype, 'Naamsiddhi', for the MP Police Department during SIH 2024, enhancing leadership, teamwork, and problem-solving skills.",
         icon: "🏆"
     },
     {
-        title: "600+ DSA Problems",
-        description: "Solved over 470+ problems on Leetcode, 60+ on Codechef, and 100+ on other coding platforms, showcasing strong problem-solving and algorithmic skills.",
+        title: "Knight @LeetCode \n 3⭐  @CodeChef",
+        description: "1861 rating on Leetcode (Knight) and top 5% of leetCode and 1606 rating on CodeChef (3⭐), demonstrating consistent performance CP by atteding 75+ contests.",
+        icon: "⭐"
+    },
+    {
+        title: "800+ DSA Problems",
+        description: "Solved over 670+ problems on Leetcode, 100+ on Codechef, and 100+ on other coding platforms, showcasing strong problem-solving and algorithmic skills.",
         icon: "💻"
     },
     {
-        title: "2-Star Coder at CodeChef",
-        description: "Demonstrated competitive programming skills by participating in 40+ contests on CodeChef and Leetcode.",
-        icon: "⭐"
+        title: "11th Rank @codeRed 2025",
+        description: "Achieved 11th rank in CodeRed 2025, a prestigious coding competition organized by AIT College Pune, among 1000+ top coders in Pune.",
+        icon: "🏆"
     }
+    
 ];
 
 const About = () => {
@@ -94,10 +100,10 @@ const About = () => {
 
                     <div className='mt-5 flex flex-col gap-3 text-slate-500'>
                         <p>
-                        <b>Full Stack Developer | ML Enthusiast</b>
+                        <b>Full Stack Developer | Agentic AI</b>
                         <br />
 
-A Full Stack Developer with a strong foundation in machine learning, skilled in building scalable web applications and integrating AI-driven solutions. I specialize in crafting intuitive user experiences and efficient back-end systems, blending technology and innovation to deliver impactful results. </p>
+A Full Stack Developer with skilled in building scalable web applications and integrating AI-driven solutions. I specialize in crafting efficient back-end systems, blending technology and innovation to deliver impactful results. Now Exploring AI Automation intigrating with system. </p>
                     </div>
                 </div>
 
@@ -219,10 +225,10 @@ A Full Stack Developer with a strong foundation in machine learning, skilled in 
 
             <div className='py-16'>
                 <div className="text-center mb-12 animate-fadeIn">
-                    <h3 className='subhead-text mb-4'>Work Experience</h3>
+                    <h3 className='subhead-text mb-4'>Education / Work Experience</h3>
                     <p className='text-slate-500 dark:text-slate-400 max-w-2xl mx-auto'>
-                        I've worked with various organizations, enhancing my skills in both teaching
-                        and practical implementation of AI/ML solutions:
+                        I've worked with various peoples, enhancing my skills in both teaching
+                        and practical implementation of technologies.
                     </p>
                 </div>
 

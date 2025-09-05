@@ -23,6 +23,17 @@ import instagram from './instagram.svg'
 import java from './java.svg'
 import c from './c.svg'
 import cpp from './cpp.svg'
+import aws from './aws.svg'
+import docker from './docker.svg'
+import kafka from './kafka.svg'
+import kubernetes from './kubernetes.svg'
+import postman from './postman.svg'
+import n8n from './n8n.svg'
+import nginx from './nginx.svg'
+import postgresql from './postgresql.svg'
+import redis from './redis.svg'
+import restApi from './restApi.svg'
+import springboot from './springboot.svg'
 
 export {
     css,
@@ -49,5 +60,16 @@ export {
     instagram,
     java,
     c,
-    cpp
+    cpp,
+    aws,
+    docker,
+    kafka,
+    kubernetes,
+    postman,
+    n8n,
+    nginx,
+    postgresql,
+    redis,
+    restApi,
+    springboot,
 }

@@ -4,8 +4,7 @@ const CTA = () => {
   return (
     <section className='cta'>
       <p className='cta-text dark:text-white font-playfair'>
-        Looking for a Full Stack Developer <br className='sm:block hidden' />
-        or ML Engineer for your next project?
+        Looking for a Full Stack Developer to Integrate AI<br className='sm:block hidden' />
       </p>
       <Link 
         to='/contact' 
