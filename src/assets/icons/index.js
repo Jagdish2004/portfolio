@@ -32,8 +32,8 @@ import n8n from './n8n.svg'
 import nginx from './nginx.svg'
 import postgresql from './postgresql.svg'
 import redis from './redis.svg'
-import restapi from './restapi.svg'
-import springboot from './springboot.svg'
+import restapi from './restApi.svg'
+import springboot from './springBoot.svg'
 
 
 export {
