@@ -7,11 +7,18 @@
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
+  --background: 27 27 27;
+  --foreground: 225 225 225;
+  --muted: 115 115 115;
+  --accent: 254 254 91;
 }
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+/* Background opacity - removed music state dependency */
+.bg-dim { opacity: 1; }
 
 body:has(.card[data-color="blue"]:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
@@ -282,12 +289,219 @@ h1, h2, h3, h4, h5, h6 {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Orbiting icons */
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbit { 
+  pointer-events: none; 
+  position: relative;
+  /* Debug: Add a subtle border to see the orbit container */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.orbit-spin { 
+  animation: orbit-spin 18s linear infinite; 
+  border-radius: 9999px; 
+  position: relative;
+}
+.orbit-item { 
+  pointer-events: auto; 
+}
+
 /* Glass effect styles */
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Blue Navbar Buttons */
+.nav-glass-button {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.15) 0%, 
+    rgba(37, 99, 235, 0.1) 25%,
+    rgba(29, 78, 216, 0.2) 50%,
+    rgba(30, 64, 175, 0.25) 75%,
+    rgba(30, 58, 138, 0.2) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 
+    0 4px 16px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-glass-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  animation: blue-shimmer 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-glass-button:hover::before {
+  opacity: 1;
+}
+
+.nav-glass-active {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.25) 0%, 
+    rgba(37, 99, 235, 0.2) 25%,
+    rgba(29, 78, 216, 0.3) 50%,
+    rgba(30, 64, 175, 0.35) 75%,
+    rgba(30, 58, 138, 0.3) 100%);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #3b82f6;
+  box-shadow: 
+    0 8px 24px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.nav-glass-inactive {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-glass-inactive:hover {
+  color: #3b82f6;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.25) 0%, 
+    rgba(37, 99, 235, 0.2) 25%,
+    rgba(29, 78, 216, 0.3) 50%,
+    rgba(30, 64, 175, 0.35) 75%,
+    rgba(30, 58, 138, 0.3) 100%);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 8px 24px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Sound Button */
+.sound-glass-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.sound-glass-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sound-glass-button:hover::before {
+  opacity: 1;
+}
+
+.sound-glass-button:hover {
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Grassy Orbiting Icons */
+.orbit-item-grassy {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.8) 0%, 
+    rgba(16, 185, 129, 0.6) 25%,
+    rgba(6, 78, 59, 0.7) 50%,
+    rgba(5, 46, 22, 0.8) 75%,
+    rgba(20, 83, 45, 0.7) 100%);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(34, 197, 94, 0.6);
+  box-shadow: 
+    0 4px 16px rgba(34, 197, 94, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 20;
+  /* Debug: Make icons more visible */
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.orbit-item-grassy::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+  animation: grassy-shimmer 3s ease-in-out infinite;
+}
+
+.orbit-item-grassy:hover {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.25) 0%, 
+    rgba(16, 185, 129, 0.2) 25%,
+    rgba(6, 78, 59, 0.3) 50%,
+    rgba(5, 46, 22, 0.35) 75%,
+    rgba(20, 83, 45, 0.3) 100%);
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 
+    0 8px 24px rgba(34, 197, 94, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+@keyframes blue-shimmer {
+  0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.6; }
+}
+
+@keyframes grassy-shimmer {
+  0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.6; }
+}
+
+/* Fireflies background visuals */
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(100px, 100px); }
+}
+
+.bg-firefly-radial {
+  background: radial-gradient(circle, rgba(254, 254, 91, 0.9) 0%, rgba(254, 254, 91, 0.5) 40%, rgba(254, 254, 91, 0.1) 70%, rgba(254, 254, 91, 0) 100%);
+  box-shadow: 0 0 8px rgba(254, 254, 91, 0.8), 0 0 16px rgba(254, 254, 91, 0.4);
+}
+
+/* Vignette overlay for focusing the model */
+.vignette-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 35%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.65) 100%);
+}
+
+/* Full-page vignette for the Home section */
+.home-vignette-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30; /* Above most content in Home */
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Permission modal styles - no blur effects */
+.permission-modal {
+  z-index: 9999 !important;
+  position: fixed !important;
 }
 
 /* Custom scrollbar for experience cards */

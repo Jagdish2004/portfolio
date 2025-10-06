@@ -8,36 +8,35 @@ audio.volume = 0.4;
 audio.loop = true;
 
 const SoundButton = () => {
-  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
   useEffect(() => {
-    // Initial play attempt
-    const initializeAudio = async () => {
-      try {
-        if (isPlayingMusic) {
-          await audio.play();
-        } else {
-          audio.pause();
-        }
-      } catch (error) {
-        console.log("Audio autoplay blocked:", error);
-        setIsPlayingMusic(false);
+    const onFirstUserGesture = () => {
+      if (isPlayingMusic) {
+        audio.play().catch(() => {});
       }
+      ["click", "keydown", "touchstart"].forEach((evt) =>
+        window.removeEventListener(evt, onFirstUserGesture)
+      );
     };
 
-    initializeAudio();
+    ["click", "keydown", "touchstart"].forEach((evt) =>
+      window.addEventListener(evt, onFirstUserGesture, { once: true })
+    );
 
-    // Cleanup function
     return () => {
       audio.pause();
+      ["click", "keydown", "touchstart"].forEach((evt) =>
+        window.removeEventListener(evt, onFirstUserGesture)
+      );
     };
-  }, []); // Run only once on mount
+  }, [isPlayingMusic]);
 
   const toggleSound = () => {
     if (isPlayingMusic) {
       audio.pause();
     } else {
-      audio.play().catch(console.error);
+      audio.play().catch(() => {});
     }
     setIsPlayingMusic(!isPlayingMusic);
   };
@@ -47,14 +46,15 @@ const SoundButton = () => {
   audio.onpause = () => setIsPlayingMusic(false);
 
   return (
-    <div className='fixed bottom-2 left-2 z-50'>
-      <img
-        src={!isPlayingMusic ? soundoff : soundon}
-        alt='sound'
-        onClick={toggleSound}
-        className='w-10 h-10 cursor-pointer object-contain hover:scale-105 transition-transform duration-300'
-      />
-    </div>
+    <> </>
+    // <div className='fixed bottom-2 left-2 z-50'>
+    //   <img
+    //     src={!isPlayingMusic ? soundoff : soundon}
+    //     alt='sound'
+    //     onClick={toggleSound}
+    //     className='w-10 h-10 cursor-pointer object-contain hover:scale-105 transition-transform duration-300'
+    //   />
+    // </div>
   );
 };
 
