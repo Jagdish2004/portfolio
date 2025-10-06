@@ -47,7 +47,7 @@ const Navbar = () => {
                 relative px-4 py-2 rounded-xl font-medium
                 backdrop-blur-md bg-gradient-to-br from-blue-500/10 via-cyan-700/10 to-gray-800/30
                 border border-cyan-400/20
-                text-gray-200 hover:text-cyan-300
+                text-blue-400 hover:text-cyan-300
                 hover:scale-110 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]
                 transition-all duration-300 ease-out
                 ${
