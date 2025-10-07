@@ -4,7 +4,7 @@ import {
 } from "react-vertical-timeline-component";
 import { CTA } from "../components";
 import { experiences, skills } from "../constants";
-import { i, sih2024 } from "../assets/images";
+import { i, sih2024, annualaward, techzooka } from "../assets/images";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -69,20 +69,26 @@ const achievements = [
         icon: "🏆"
     },
     {
-        title: "Knight @LeetCode \n 3⭐  @CodeChef",
-        description: "1861 rating on Leetcode (Knight) and top 5% of leetCode and 1606 rating on CodeChef (3⭐), demonstrating consistent performance CP by atteding 75+ contests.",
-        icon: "⭐"
+        title: "Academic Award 2024-25",
+        description: "Received the Academic Excellence Award for outstanding performance in 5th and 6th semester",
+        icon: "🏆"
     },
     {
-        title: "800+ DSA Problems",
-        description: "Solved over 670+ problems on Leetcode, 100+ on Codechef, and 100+ on other coding platforms, showcasing strong problem-solving and algorithmic skills.",
-        icon: "💻"
+        title: "Techzooka 2024 Innovation Challenge",
+        description: "Received a Certificate of Excellence in the Techzooka 2024 Innovation Challenge by Infosys for Innovative Project",
+        icon: "🏆"
     },
     {
         title: "11th Rank @codeRed 2025",
         description: "Achieved 11th rank in CodeRed 2025, a prestigious coding competition organized by AIT College Pune, among 1000+ top coders in Pune.",
         icon: "🏆"
+    },
+    {
+        title: "Competitive Programming Achievements",
+        description: "1861 rating on Leetcode (Knight) and top 5% of leetCode and 1606 rating on CodeChef (3⭐), demonstrating consistent performance CP by atteding 75+ contests. and 800+ dsa problems solved.",
+        icon: "⭐"
     }
+    
     
 ];
 
@@ -187,36 +193,71 @@ A Full Stack Developer with skilled in building scalable web applications and in
             {/* Achievements Section */}
             <div className='py-10 flex flex-col'>
                 <h3 className='subhead-text'>My Achievements</h3>
-                <div className='mt-16 grid grid-cols-1 md:grid-cols-3 gap-8'>
+                
+                {/* Achievement Images Grid */}
+                <div className='mt-8 mb-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
+                            <img 
+                                src={sih2024} 
+                                alt="Smart India Hackathon 2024 Winner" 
+                                className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                            <div className='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                <p className='font-semibold text-sm'>SIH 2024 Winner</p>
+                            </div>
+                        </div>
+                        
+                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
+                            <img 
+                                src={annualaward} 
+                                alt="Academic Excellence Award 2024-25" 
+                                className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                            <div className='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                <p className='font-semibold text-sm'>Academic Excellence</p>
+                            </div>
+                        </div>
+                        
+                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
+                            <img 
+                                src={techzooka} 
+                                alt="Techzooka 2024 Innovation Challenge" 
+                                className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                            <div className='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                <p className='font-semibold text-sm'>Techzooka Innovation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Achievement Cards */}
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     {achievements.map((achievement, index) => (
                         <div 
                             key={index}
-                            className={`bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-xl
+                            className='bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl
                                      hover:bg-white/20 transition-all duration-300
                                      dark:bg-gray-800/50 dark:hover:bg-gray-700/50
-                                     ${achievement.title.includes('Smart India Hackathon') ? 'md:col-span-3' : ''}`}
+                                     group hover:shadow-xl'
                         >
-                            <div className='flex flex-col md:flex-row gap-6 items-start'>
+                            <div className='flex items-start gap-4'>
+                                <div className='text-3xl group-hover:scale-110 transition-transform duration-300'>
+                                    {achievement.icon}
+                                </div>
                                 <div className='flex-1'>
-                                    <div className='text-4xl mb-4'>{achievement.icon}</div>
-                                    <h4 className='text-xl font-bold text-blue-500 dark:text-blue-400 mb-2 font-grotesk'>
+                                    <h4 className='text-lg font-bold text-blue-500 dark:text-blue-400 mb-2 font-grotesk
+                                                group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors'>
                                         {achievement.title}
                                     </h4>
-                                    <p className='text-gray-600 dark:text-gray-300 font-jakarta'>
+                                    <p className='text-gray-600 dark:text-gray-300 font-jakarta text-sm leading-relaxed'>
                                         {achievement.description}
                                     </p>
                                 </div>
-                                
-                                {/* Show image only for SIH achievement */}
-                                {achievement.title.includes('Smart India Hackathon') && (
-                                    <div className='w-full md:w-[350px] overflow-hidden rounded-xl shadow-lg'>
-                                        <img 
-                                            src={sih2024} 
-                                            alt="SIH 2024 Winner" 
-                                            className='w-full h-auto object-cover hover:scale-105 transition-transform duration-300'
-                                        />
-                                    </div>
-                                )}
                             </div>
                         </div>
                     ))}

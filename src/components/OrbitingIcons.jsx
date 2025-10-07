@@ -53,7 +53,7 @@ const OrbitingIcons = ({ items = [], radius = 140, duration = 18 }) => {
       </div>
 
       {/* Inline keyframes for rotation */}
-      <style jsx>{`
+      <style>{`
         @keyframes spin {
           to {
             transform: rotate(360deg);

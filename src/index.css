@@ -20,6 +20,13 @@ body {
 /* Background opacity - removed music state dependency */
 .bg-dim { opacity: 1; }
 
+/* Dark mode background image visibility */
+.dark .bg-dim { 
+  opacity: 1; 
+  filter: brightness(0.7) contrast(1.2) saturate(1.1);
+  z-index: -20;
+}
+
 body:has(.card[data-color="blue"]:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
 }
@@ -496,6 +503,11 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   z-index: 30; /* Above most content in Home */
   background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Dark mode vignette overlay - less intense to show background */
+.dark .home-vignette-overlay {
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.4) 100%);
 }
 
 /* Permission modal styles - no blur effects */
