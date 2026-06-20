@@ -1,16 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Footer, Navbar, DarkModeToggle, SoundButton, SocialBar } from "./components/";
 import { About, Contact, Home, Projects } from "./pages";
-import { useLocation } from "react-router-dom";
-
 const App = () => {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
-
   return (
     <main className='bg-slate-300/20 dark:bg-gray-900 transition-colors duration-300'>
       <Navbar />
-      {!isHome && <DarkModeToggle />}
+      <DarkModeToggle />
       <SoundButton />
       <SocialBar />
       <Routes>
