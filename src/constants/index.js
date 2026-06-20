@@ -1,17 +1,14 @@
-import { cpmc, dypcoe} from "../assets/images";
+import { cpmc, dypcoe, joshsoftware } from "../assets/images";
 import {
     css,
     express,
     git,
     github,
-    html,
     javascript,
     mongodb,
     nodejs,
     react,
     python,
-    mysql,
-    ml,
     linkedin,
     contact,
     codechef,
@@ -22,34 +19,34 @@ import {
     cpp,
     aws,
     docker,
-    kafka,
-    kubernetes,
-    postman,
     n8n,
-    nginx,
     postgresql,
     redis,
     restapi,
     springboot,
-
-
-
+    golang,
+    linux,
 } from "../assets/icons";
 
 export const skills = [
     {
-        imageUrl: c,
-        name: "C",
-        type: "Language",
-    },
-    {
-        imageUrl: cpp,
-        name: "Cpp",
+        imageUrl: golang,
+        name: "Go",
         type: "Language",
     },
     {
         imageUrl: java,
         name: "Java",
+        type: "Language",
+    },
+    {
+        imageUrl: cpp,
+        name: "C++",
+        type: "Language",
+    },
+    {
+        imageUrl: c,
+        name: "C",
         type: "Language",
     },
     {
@@ -61,16 +58,6 @@ export const skills = [
         imageUrl: python,
         name: "Python",
         type: "Language",
-    },
-    {
-        imageUrl: ml,
-        name: "Machine Learning",
-        type: "AI/ML",
-    },
-    {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
     },
     {
         imageUrl: react,
@@ -102,11 +89,6 @@ export const skills = [
         type: "Database",
     },
     {
-        imageUrl: mysql,
-        name: "MySQL",
-        type: "Database",
-    },
-    {
         imageUrl: postgresql,
         name: "PostgreSQL",
         type: "Database",
@@ -116,30 +98,18 @@ export const skills = [
         name: "Redis",
         type: "Database",
     },
-     { imageUrl: docker,
+    {
+        imageUrl: linux,
+        name: "Linux",
+        type: "DevOps",
+    },
+    { imageUrl: docker,
         name: "Docker",
         type: "DevOps",
-    },
-    { imageUrl: kubernetes,
-        name: "Kubernetes",
-        type: "DevOps",
-    },
-    { imageUrl: kafka,
-        name: "Kafka",
-        type: "DevOps", 
     },
     { imageUrl: aws,
         name: "AWS",
         type: "Cloud",
-    },
-    {   imageUrl: nginx,
-        name: "Nginx",
-        type: "DevOps",
-    },
-    {
-        imageUrl: postman,
-        name: "Postman",
-        type: "API Testing",
     },
     {
         imageUrl: git,
@@ -162,15 +132,16 @@ export const skills = [
 
 export const experiences = [
     {
-        title: "Final Year IT Student",
-        company_name: "Dr. D.Y. Patil College of Engineering, Pune",
-        icon: dypcoe,
-        iconBg: "#accbe1",
-        date: "Nov 2022 - Jun 2026(Expected)",
+        title: "SDE Intern",
+        company_name: "Josh Software",
+        icon: joshsoftware,
+        iconBg: "#fff1ed",
+        date: "Jan 2026 - Jun 2026",
         points: [
-            "Pursuing Bachelor of Engineering in Information Technology with 8.8 CGPA",
-            "Completed Strong foundation in CS Fundamentals like DSA, OOPs, DBMS, OS, CN, ML, etc.",
-            "Annual Award for Academic Excellence in 2024-25 for securing maximum Achievement",
+            "Contributed to KindKart by building Golang-based services and GraphQL APIs, designing GraphQL and DB schemas for donation workflows, verification systems, and analytics.",
+            "Built a video processing pipeline (upload → speech-to-text → LLM-based answer extraction) enabling faster, more transparent verification.",
+            "Designed an LLM-driven, component-aware analytics system that converts user-selected inputs into dynamic queries and selects appropriate frontend visualizations via GraphQL for real-time chart rendering.",
+            "Created an end-to-end bulk job processing flow using the worker pool pattern with goroutines — managing API rate limits, processing async jobs in chunks, and tracking progress.",
         ],
     },
     {
@@ -180,12 +151,26 @@ export const experiences = [
         iconBg: "#accbe1",
         date: "Sep 2024 - Sep 2025",
         points: [
-            "Designed and evaluated Contests on hackerrank",
-            "Organized and conducted coding competitions and workshops to enhance problem-solving skills",
-            "Hosted multiple events to promote competitive programming culture in the institution"
+            "Designed and evaluated competitive programming contests on HackerRank.",
+            "Organized coding competitions and workshops to enhance students' problem-solving skills.",
+            "Hosted multiple events to promote a competitive programming culture in the institution.",
         ],
     },
-    
+];
+
+export const educations = [
+    {
+        title: "B.E. in Information Technology",
+        company_name: "Dr. D. Y. Patil College of Engineering, Pune",
+        icon: dypcoe,
+        iconBg: "#accbe1",
+        date: "Nov 2022 - June 2026",
+        points: [
+            "Graduated with a Bachelor of Engineering in Information Technology — CGPA 8.9 / 10.",
+            "Strong foundation in CS fundamentals — DSA, OOP, DBMS, OS, CN, ML.",
+            "Annual Academic Excellence Award 2024-25 for outstanding performance in 5th & 6th semesters.",
+        ],
+    },
 ];
 
 export const socialLinks = [

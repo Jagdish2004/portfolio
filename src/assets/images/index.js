@@ -6,6 +6,7 @@ import sih2024 from './sih2024.jpg'
 import dypcoe from './dypcoe.png'
 import annualaward from './annualaward.png'
 import techzooka from './techzookainfosys.jpg'
+import joshsoftware from './joshsoftware.svg'
 
 export {
     cpmc,
@@ -15,5 +16,6 @@ export {
     sih2024,
     dypcoe,
     annualaward,
-    techzooka
+    techzooka,
+    joshsoftware
 }
