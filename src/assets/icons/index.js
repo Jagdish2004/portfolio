@@ -34,6 +34,8 @@ import postgresql from './postgresql.svg'
 import redis from './redis.svg'
 import restapi from './restApi.svg'
 import springboot from './springBoot.svg'
+import golang from './golang.svg'
+import linux from './linux.svg'
 
 
 export {
@@ -72,5 +74,7 @@ export {
     postgresql,
     redis,
     springboot,
-    restapi
+    restapi,
+    golang,
+    linux
 }

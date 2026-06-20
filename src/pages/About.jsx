@@ -3,7 +3,7 @@ import {
     VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { CTA } from "../components";
-import { experiences, skills } from "../constants";
+import { experiences, educations, skills } from "../constants";
 import { i, sih2024, annualaward, techzooka } from "../assets/images";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -64,32 +64,35 @@ const ExperienceCard = ({ experience, index }) => {
 
 const achievements = [
     {
-        title: "Smart India Hackathon Winner 2024",
-        description: "National level achievement in India's biggest hackathon.Developed a fuzzy name conversion Algorithm and scalable Prototype, 'Naamsiddhi', for the MP Police Department during SIH 2024, enhancing leadership, teamwork, and problem-solving skills.",
+        title: "Smart India Hackathon 2024 — Grand Finale Winner",
+        description: "Won the national-level Grand Finale of Smart India Hackathon 2024. Built 'Naamsiddhi', a fuzzy name-matching algorithm and scalable prototype for the MP Police Department.",
         icon: "🏆"
     },
     {
-        title: "Academic Award 2024-25",
-        description: "Received the Academic Excellence Award for outstanding performance in 5th and 6th semester",
+        title: "TCS CodeVita 2025 — Global Rank #269",
+        description: "Secured a Global Rank of 269 in TCS CodeVita 2025 among 5.5 lakh+ participants worldwide — one of the largest competitive programming contests on the planet.",
+        icon: "🎯"
+    },
+    {
+        title: "Academic Excellence Award 2024-25",
+        description: "Awarded the Annual Academic Excellence Award by DYPCOE Pune for outstanding performance in the 5th and 6th semesters.",
         icon: "🏆"
     },
     {
-        title: "Techzooka 2024 Innovation Challenge",
-        description: "Received a Certificate of Excellence in the Techzooka 2024 Innovation Challenge by Infosys for Innovative Project",
+        title: "TechZooka 2024 Innovation Challenge — Infosys",
+        description: "Received the Certificate of Excellence at the TechZooka 2024 Innovation Challenge by Infosys for an innovative project submission.",
         icon: "🏆"
     },
     {
-        title: "11th Rank @codeRed 2025",
-        description: "Achieved 11th rank in CodeRed 2025, a prestigious coding competition organized by AIT College Pune, among 1000+ top coders in Pune.",
+        title: "CodeRed 2025 — Rank #11",
+        description: "Ranked 11th out of 1000+ participants in the CodeRed 2025 offline competitive programming contest organized at Pune.",
         icon: "🏆"
     },
     {
-        title: "Competitive Programming Achievements",
-        description: "1861 rating on Leetcode (Knight) and top 5% of leetCode and 1606 rating on CodeChef (3⭐), demonstrating consistent performance CP by atteding 75+ contests. and 800+ dsa problems solved.",
-        icon: "⭐"
+        title: "Competitive Programming",
+        description: "Knight on LeetCode (rating 1861) and 3★ on CodeChef (rating 1606). 800+ DSA problems solved across 75+ contests.",
+        icon: "⚔️"
     }
-    
-    
 ];
 
 const About = () => {
@@ -100,16 +103,15 @@ const About = () => {
                     <h1 className='head-text'>
                         Hello, I'm{" "}
                         <span className='blue-gradient_text font-semibold drop-shadow'>
-                            Jagdish
+                            Jagdish Raut
                         </span>
                     </h1>
 
-                    <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+                    <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-300'>
                         <p>
-                        <b>Full Stack Developer | Agentic AI</b>
-                        <br />
-
-A Full Stack Developer with skilled in building scalable web applications and integrating AI-driven solutions. I specialize in crafting efficient back-end systems, blending technology and innovation to deliver impactful results. Now Exploring AI Automation intigrating with system. </p>
+                            I build scalable backend systems with <b>Go</b>, <b>Java</b> & <b>Spring Boot</b>, design <b>REST</b> and <b>GraphQL</b> APIs, and ship cloud-native applications on AWS &amp; Docker.
+                            <br /><br />
+                           <b>SIH 2024 Grand Finale Winner</b> (National) and a competitive programmer with a Global Rank of <b>269 in TCS CodeVita 2025</b> (among 5.5 lakh+ participants worldwide), <b>Knight on LeetCode</b> (rating 1861), and <b>3★ on CodeChef</b> (rating 1606), with <b>1000+ DSA problems solved</b> across multiple competitive programming platforms and <b>75+ contests participated</b>.  </p>
                     </div>
                 </div>
 
@@ -127,9 +129,9 @@ A Full Stack Developer with skilled in building scalable web applications and in
                     </div>
 
                     <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                        <div className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full shadow-lg">
+                        <div className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full shadow-lg whitespace-nowrap">
                             <p className="text-white text-sm font-grotesk font-medium tracking-wider">
-                            Full Stack Developer
+                                SDE @ Josh Software
                             </p>
                         </div>
                     </div>
@@ -142,12 +144,14 @@ A Full Stack Developer with skilled in building scalable web applications and in
                     <a
                         href="/Jagdish_Raut_Resume.pdf"  // Place your resume in the public folder
                         download="Jagdish_Raut_Resume.pdf"
-                        className='flex items-center gap-3 px-6 py-3 rounded-full
-                                 bg-gradient-to-r from-blue-600 to-cyan-500 
+                        className='btn flex items-center gap-3 px-6 py-3 rounded-full
+                                 bg-gradient-to-r from-blue-600 to-cyan-500
                                  hover:from-blue-700 hover:to-cyan-600
-                                 text-white font-semibold shadow-lg 
+                                 !text-white font-semibold shadow-lg
                                  transform hover:scale-105 transition-all duration-300
-                                 dark:from-blue-500 dark:to-cyan-400'
+                                 dark:from-blue-500 dark:to-cyan-400
+                                 dark:shadow-[0_0_25px_rgba(56,189,248,0.45)]
+                                 dark:hover:shadow-[0_0_35px_rgba(56,189,248,0.65)]'
                     >
                         <svg 
                             className="w-6 h-6" 
@@ -197,35 +201,35 @@ A Full Stack Developer with skilled in building scalable web applications and in
                 {/* Achievement Images Grid */}
                 <div className='mt-8 mb-12'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
-                            <img 
-                                src={sih2024} 
-                                alt="Smart India Hackathon 2024 Winner" 
-                                className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
+                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-slate-100 dark:bg-gray-800'>
+                            <img
+                                src={sih2024}
+                                alt="Smart India Hackathon 2024 Winner"
+                                className='w-full h-56 sm:h-48 object-contain group-hover:scale-105 transition-transform duration-300'
                             />
                             <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
                             <div className='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                 <p className='font-semibold text-sm'>SIH 2024 Winner</p>
                             </div>
                         </div>
-                        
-                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
-                            <img 
-                                src={annualaward} 
-                                alt="Academic Excellence Award 2024-25" 
-                                className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
+
+                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-slate-100 dark:bg-gray-800'>
+                            <img
+                                src={annualaward}
+                                alt="Academic Excellence Award 2024-25"
+                                className='w-full h-56 sm:h-48 object-contain group-hover:scale-105 transition-transform duration-300'
                             />
                             <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
                             <div className='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                 <p className='font-semibold text-sm'>Academic Excellence</p>
                             </div>
                         </div>
-                        
-                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
-                            <img 
-                                src={techzooka} 
-                                alt="Techzooka 2024 Innovation Challenge" 
-                                className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
+
+                        <div className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-slate-100 dark:bg-gray-800'>
+                            <img
+                                src={techzooka}
+                                alt="Techzooka 2024 Innovation Challenge"
+                                className='w-full h-56 sm:h-48 object-contain group-hover:scale-105 transition-transform duration-300'
                             />
                             <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
                             <div className='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -266,17 +270,16 @@ A Full Stack Developer with skilled in building scalable web applications and in
 
             <div className='py-16'>
                 <div className="text-center mb-12 animate-fadeIn">
-                    <h3 className='subhead-text mb-4'>Education / Work Experience</h3>
+                    <h3 className='subhead-text mb-4'>Work Experience</h3>
                     <p className='text-slate-500 dark:text-slate-400 max-w-2xl mx-auto'>
-                        I've worked with various peoples, enhancing my skills in both teaching
-                        and practical implementation of technologies.
+                        Roles I've held — from interning to shipping production systems and mentoring peers.
                     </p>
                 </div>
 
                 <div className='mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 px-4'>
                     {experiences.map((experience, index) => (
                         <ExperienceCard
-                            key={experience.company_name}
+                            key={`${experience.company_name}-${experience.title}`}
                             experience={experience}
                             index={index}
                         />
@@ -284,7 +287,28 @@ A Full Stack Developer with skilled in building scalable web applications and in
                 </div>
             </div>
 
-            <hr className='border-slate-200' />
+            <hr className='border-slate-200 dark:border-gray-700' />
+
+            <div className='py-16'>
+                <div className="text-center mb-12 animate-fadeIn">
+                    <h3 className='subhead-text mb-4'>Education</h3>
+                    <p className='text-slate-500 dark:text-slate-400 max-w-2xl mx-auto'>
+                        Where I built the foundation — CS fundamentals, coursework, and academic milestones.
+                    </p>
+                </div>
+
+                <div className='mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 px-4'>
+                    {educations.map((education, index) => (
+                        <ExperienceCard
+                            key={`${education.company_name}-${education.title}`}
+                            experience={education}
+                            index={index}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            <hr className='border-slate-200 dark:border-gray-700' />
             <CTA />
         </section>
     );

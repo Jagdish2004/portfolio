@@ -510,6 +510,15 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.4) 100%);
 }
 
+/* Hide scrollbar (used in horizontally scrolling navbar) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Permission modal styles - no blur effects */
 .permission-modal {
   z-index: 9999 !important;

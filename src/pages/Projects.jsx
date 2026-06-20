@@ -11,6 +11,23 @@ import aiagent from "../assets/images/aiagent.png";
 
 const projects = [
   {
+    iconUrl: null,
+    theme: 'btn-back-green',
+    name: "Fintech API: Transaction Risk Detection Engine",
+    date: "Jan 2026",
+    description: "Monolithic Golang REST API for real-time transaction risk detection with a SOLID-based, configurable rule engine.",
+    points: [
+      "Designed and developed a monolithic Golang REST API for transaction risk detection using vertical slicing architecture, with PostgreSQL for persistence, Redis for transaction queuing, and a containerized setup via Docker.",
+      "Implemented a score-based fraud detection engine using statistical metrics (Z-score, P95 percentile, mean, variance) to track user spending behavior and compute risk scores in O(1) per transaction.",
+      "Built background job schedulers for complex behavioral metrics not feasible in O(1); leveraged goroutines, channels, and worker pool concurrency to parallelize computations and efficiently process high transaction volumes via Redis queues, storing results as user behavior profiles.",
+      "Implemented JWT authentication, rule-based risk scoring using signals like user behavior, transaction frequency, and device identifiers, and maintained audit logs with automated testing.",
+      "Designed a SOLID-based rule engine with dynamic configurable weightage — extensible detection rules without code changes; automated DB migrations (golang-migrate), testing, and build workflows using Docker Compose for a reproducible CI-ready environment.",
+    ],
+    tech: "Go • REST API • PostgreSQL • Redis • Docker • Docker Compose • JWT • golang-migrate • Goroutines • Worker Pool",
+    githubLink: "https://github.com/jagdish-josh/risk-detection",
+    liveLink: null,
+  },
+  {
   iconUrl: aiagent,
   theme: 'btn-back-blue',
   name: "AI Agent",
@@ -97,25 +114,38 @@ const ProjectCard = ({ project }) => {
       {/* Right side: Image and Buttons - Full width on mobile, 1/3 width on desktop */}
       <div className="w-full md:w-1/3 p-6 flex flex-col justify-between bg-gray-50 dark:bg-gray-800/50">
         <div className="w-full h-48 md:h-40 mb-4 overflow-hidden rounded-lg">
-          <img 
-            src={project.iconUrl} 
-            alt={project.name}
-            className="w-full h-full object-cover transform transition-all duration-500 hover:scale-110"
-          />
+          {project.iconUrl ? (
+            <img
+              src={project.iconUrl}
+              alt={project.name}
+              className="w-full h-full object-cover transform transition-all duration-500 hover:scale-110"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center p-4 text-center
+                            bg-gradient-to-br from-blue-500/20 via-cyan-500/15 to-emerald-500/20
+                            dark:from-blue-500/30 dark:via-cyan-500/20 dark:to-emerald-500/30
+                            border border-blue-400/20 dark:border-cyan-400/20 rounded-lg">
+              <span className="font-grotesk font-semibold text-sm md:text-base text-blue-700 dark:text-cyan-200">
+                {project.name}
+              </span>
+            </div>
+          )}
         </div>
-        
+
         <div className="flex flex-col gap-3">
-          <Link 
-            to={project.liveLink} 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Demo
-            <img src={arrow} alt="arrow" className="w-4 h-4" />
-          </Link>
-          <Link 
-            to={project.githubLink} 
+          {project.liveLink && (
+            <Link
+              to={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Demo
+              <img src={arrow} alt="arrow" className="w-4 h-4" />
+            </Link>
+          )}
+          <Link
+            to={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"

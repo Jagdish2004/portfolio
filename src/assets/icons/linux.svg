@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Tux body -->
+  <ellipse cx="24" cy="30" rx="13" ry="16" fill="#2c2c2c"/>
+  <!-- White belly -->
+  <ellipse cx="24" cy="33" rx="8" ry="11" fill="#f5f5dc"/>
+  <!-- Head -->
+  <ellipse cx="24" cy="13" rx="10" ry="11" fill="#2c2c2c"/>
+  <!-- Eyes -->
+  <circle cx="20.5" cy="11" r="2.5" fill="white"/>
+  <circle cx="27.5" cy="11" r="2.5" fill="white"/>
+  <circle cx="21" cy="11.5" r="1.2" fill="#1a1a1a"/>
+  <circle cx="28" cy="11.5" r="1.2" fill="#1a1a1a"/>
+  <!-- Beak -->
+  <path d="M21 16 Q24 19 27 16 Q24 14 21 16Z" fill="#f5a623"/>
+  <!-- Feet -->
+  <ellipse cx="18" cy="45" rx="5" ry="2.5" fill="#f5a623"/>
+  <ellipse cx="30" cy="45" rx="5" ry="2.5" fill="#f5a623"/>
+  <!-- Wings -->
+  <ellipse cx="11" cy="30" rx="4" ry="9" fill="#2c2c2c" transform="rotate(-15 11 30)"/>
+  <ellipse cx="37" cy="30" rx="4" ry="9" fill="#2c2c2c" transform="rotate(15 37 30)"/>
+</svg>
